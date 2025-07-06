@@ -14,12 +14,11 @@
     <artifactId>gateway-service</artifactId>
 
     <properties>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring-boot.version>3.2.5</spring-boot.version>
         <spring-cloud.version>2023.0.1</spring-cloud.version>
     </properties>
+
 
     <!-- ✅ Proper version management for Spring Boot & Spring Cloud -->
     <dependencyManagement>
@@ -73,5 +72,4 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
     </dependencies>
-
 </project>
