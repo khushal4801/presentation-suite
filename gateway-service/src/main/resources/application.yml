@@ -9,9 +9,11 @@ spring:
     gateway:
       routes:
         - id: catalog-service
-          uri: lb://catalog-service
+          uri: lb://CATALOG-SERVICE
           predicates:
             - Path=/api/catalog/**
+          filters:
+            - StripPrefix=2  # 👈 this is MISSING in your current setup
 
         - id: video-service
           uri: lb://video-service
