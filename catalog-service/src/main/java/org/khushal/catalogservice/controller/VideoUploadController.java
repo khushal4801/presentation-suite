@@ -24,7 +24,7 @@ public class VideoUploadController {
         }
 
         try {
-            Files.createDirectory(uploadDir); // Ensure the upload directory exists
+            Files.createDirectories(uploadDir); // Ensure the upload directory exists
 
             for(MultipartFile file : files) {
                 if (file.isEmpty()) {
