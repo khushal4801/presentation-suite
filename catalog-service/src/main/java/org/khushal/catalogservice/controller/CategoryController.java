@@ -3,6 +3,7 @@ package org.khushal.catalogservice.controller;
 import org.khushal.catalogservice.model.Category;
 import org.khushal.catalogservice.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,7 +32,7 @@ public class CategoryController {
         if (categoryRepository.existsByName(category.getName())) {
             return ResponseEntity.badRequest().body("Category already exists.");
         }
-        return ResponseEntity.ok(categoryRepository.save(category));
+        return ResponseEntity.status(HttpStatus.CREATED).body(categoryRepository.save(category));
     }
 
     @PutMapping("/{id}")
