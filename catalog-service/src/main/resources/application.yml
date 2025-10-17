@@ -4,10 +4,28 @@ server:
 spring:
   application:
     name: catalog-service
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 200MB
   config:
     import: optional:configserver:http://localhost:8888
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, env, health, info
 
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
+
+cloud:
+  aws:
+    credentials:
+      access-key: YOUR_AWS_ACCESS_KEY
+      secret-key: YOUR_AWS_SECRET_KEY
+    region:
+        static: ap-south-1
