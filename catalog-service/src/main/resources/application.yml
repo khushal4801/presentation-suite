@@ -29,3 +29,12 @@ cloud:
       secret-key: YOUR_AWS_SECRET_KEY
     region:
         static: ap-south-1
+
+# Microservice URLs
+tts:
+  fastapi:
+    url: http://127.0.0.1:8001
+
+video:
+  service:
+    url: http://localhost:8082
